@@ -26,6 +26,7 @@ group :development, :test do
 end
 
 group :development do
+  gem "letter_opener"
   gem 'meta_request'
   gem 'web-console', '>= 3.3.0'
   gem 'meta_request'
