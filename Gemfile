@@ -15,14 +15,18 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
+gem 'rails_semantic_logger'
 
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec-rails', '~> 3.5'
+  gem 'pry-rails'
 end
 
 group :development do
+  gem 'meta_request'
   gem 'web-console', '>= 3.3.0'
+  gem 'meta_request'
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
