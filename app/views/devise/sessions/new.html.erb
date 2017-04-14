@@ -5,31 +5,29 @@
         Log-in to your account
       </div>
     </h2>
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="ui large form">
-        <div class="ui stacked segment">
-          <div class="field">
-            <div class="ui left icon input">
-              <i class="user icon"></i>
-              <%= f.email_field :email, autofocus: true, placeholder: "Email Addresss" %>
-            </div>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "ui large form"}) do |f| %>
+      <div class="ui stacked segment">
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="user icon"></i>
+            <%= f.email_field :email, autofocus: true, placeholder: "Email Addresss", id: "email" %>
           </div>
-          <div class="field">
-            <div class="ui left icon input">
-              <i class="lock icon"></i>
-              <%= f.password_field :password, autocomplete: "off", placeholder: "Password" %>
-            </div>
-          </div>
-          <% if devise_mapping.rememberable? -%>
-            <div class="field">
-              <%= f.check_box :remember_me %>
-              <%= f.label :remember_me %>
-            </div>
-          <% end -%>
-          <%= f.submit "Log in", class: "ui fluid large teal submit button" %>
         </div>
-        <div class="ui error message"><%= devise_error_messages! %></div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="lock icon"></i>
+            <%= f.password_field :password, autocomplete: "off", placeholder: "Password", id: "password" %>
+          </div>
+        </div>
+        <% if devise_mapping.rememberable? -%>
+          <div class="field">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+        <% end %>
+        <%= f.submit "Log in", class: "ui fluid large teal submit button" %>
       </div>
+      <div class="ui error message"></div>
     <% end %>
 
     <div class="ui message">
