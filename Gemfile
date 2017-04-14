@@ -17,6 +17,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 gem 'rails_semantic_logger'
 gem 'semantic-ui-sass', git: 'https://github.com/doabit/semantic-ui-sass.git'
+gem 'devise'
 
 group :development, :test do
   gem 'byebug', platform: :mri
