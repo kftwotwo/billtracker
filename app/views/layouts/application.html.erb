@@ -9,8 +9,11 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+
+    <%= render('layouts/messages') %>
+
+    <div class="ui container">
+      <%= yield %>
+    </div>
   </body>
 </html>
