@@ -12,4 +12,5 @@ describe Bill do
   it { should belong_to :company }
   it { should have_one :frequency }
   it { should have_many :notes }
+  it { should have_one :category }
 end
