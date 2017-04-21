@@ -5,4 +5,5 @@ describe Company do
 
   it { should belong_to :user}
   it { should have_many :bills }
+  it { should have_many :notes }
 end
