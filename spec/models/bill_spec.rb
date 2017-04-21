@@ -10,4 +10,5 @@ describe Bill do
 
   it { should belong_to :user }
   it { should belong_to :company }
+  it { should have_one :frequency }
 end
