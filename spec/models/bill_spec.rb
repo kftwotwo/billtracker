@@ -7,10 +7,12 @@ describe Bill do
   it { should have_db_column :account_number }
   it { should have_db_column :company_id }
   it { should have_db_column :user_id }
+  it { should have_db_column :account_id }
 
   it { should belong_to :user }
   it { should belong_to :company }
+  it { should belong_to :account }
   it { should have_one :frequency }
-  it { should have_many :notes }
   it { should have_one :category }
+  it { should have_many :notes }
 end
