@@ -1,0 +1,13 @@
+<%= form_for @company, html: {class: "ui form"} do |f| %>
+  <div class="field">
+    <%= f.label :name, "Company Name" %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :website %>
+    <%= f.text_field :website %>
+  </div>
+
+   <%= f.submit "Add Company", class: 'ui button'%>
+<% end %>
