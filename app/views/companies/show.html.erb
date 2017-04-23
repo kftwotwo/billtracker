@@ -1,0 +1,16 @@
+<div class="ui">
+  <div class="header">
+    <h1><%= @company.name %></h1>
+  </div>
+</div>
+
+<div class="ui sub header">
+  <%= link_to "Website", URI::HTTP.build({:host => @company.website}).to_s, target: "_blank" %>
+</div>
+
+<div class="ui styled accordion">
+  <% if @company.accounts.empty? %>
+    <p>You do not have any accounts at this company.</p>
+  <% end %>
+</div>
+<%= link_to "Add new account", new_company_account_path %>
