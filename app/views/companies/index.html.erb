@@ -2,9 +2,12 @@
 
 <ul>
   <% @companies.each do |company| %>
-    <li><%= company.name %></li>
-    <% end.empty? %>
-    <p>You currently do not have any companies</p>
-</ul>
+    <li><%= link_to "#{company.name}", company_path(company.id) %></li>
+    <% end %>
+  </ul>
 
-<%= link_to "Add a new company", new_company_path %>
+  <% if @companies.empty? %>
+    <p>You currently do not have any companies</p>
+  <% end %>
+
+  <%= link_to "Add a new company", new_company_path %>

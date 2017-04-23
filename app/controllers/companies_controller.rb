@@ -1,9 +1,10 @@
 class CompaniesController < ApplicationController
   def index
-    @companies = Company.all
+    @companies = current_user.companies
   end
 
   def show
+    @company = Company.find(params[:id])
   end
 
   def new
