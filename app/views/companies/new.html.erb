@@ -1,4 +1,7 @@
 <%= form_for @company, html: {class: "ui form"} do |f| %>
+
+  <%= f.hidden_field :user_id, value: current_user.id %>
+
   <div class="field">
     <%= f.label :name, "Company Name" %>
     <%= f.text_field :name %>
