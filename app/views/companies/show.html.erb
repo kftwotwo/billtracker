@@ -13,4 +13,4 @@
     <p>You do not have any accounts at this company.</p>
   <% end %>
 </div>
-<%= link_to "Add new account", new_company_account_path %>
+<%= link_to "Add new account", new_company_account_path(company_id: @company.id) %>
