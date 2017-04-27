@@ -1,0 +1,21 @@
+<h1>Accounts</h1>
+
+<table class="ui celled table">
+ <thead>
+   <th>Account Name</th>
+   <th>Company Name</th>
+   <th>Type</th>
+ </thead>
+
+ <tbody>
+
+   <% @accounts.each do |account| %>
+     <tr>
+       <td><%= link_to "#{account.account_name}", company_account_path(account.id, account.company_id) %></td>
+       <td><%= Company.find(account.company_id).name %></td>
+       <td><%= account.kind %></td>
+       <td><a href="#" class="ui small button">Pay</a></td>
+     </tr>
+   <% end %>
+ </tbody>
+</table>
