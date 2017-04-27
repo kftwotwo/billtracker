@@ -3,8 +3,8 @@
 <ul>
   <% @companies.each do |company| %>
     <li><%= link_to "#{company.name}", company_path(company.id) %></li>
-    <% end %>
-  </ul>
+  <% end %>
+</ul>
 
   <% if @companies.empty? %>
     <p>You currently do not have any companies</p>

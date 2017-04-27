@@ -5,6 +5,7 @@ class CompaniesController < ApplicationController
 
   def show
     @company = Company.find(params[:id])
+    @accounts = @company.accounts
   end
 
   def new

@@ -12,5 +12,17 @@
   <% if @company.accounts.empty? %>
     <p>You do not have any accounts at this company.</p>
   <% end %>
+
+  <% @accounts.each do |account| %>
+    <div class="title">
+      <i class="dropdown icon"></i>
+      <%= account.account_name %>
+    </div>
+
+    <div class="content">
+      <p class="transition hidden">Account Number: <%= account.account_number %></p>
+    </div>
+  <% end %>
 </div>
+
 <%= link_to "Add new account", new_company_account_path(company_id: @company.id) %>
