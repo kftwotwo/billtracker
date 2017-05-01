@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(version: 20170427031329) do
     t.integer  "account_id"
     t.integer  "bill_id"
     t.integer  "company_id"
+    t.float    "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

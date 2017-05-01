@@ -5,6 +5,7 @@ class CreateTransactions < ActiveRecord::Migration[5.0]
       t.integer :account_id
       t.integer :bill_id
       t.integer :company_id
+      t.float :amount
 
       t.timestamps
     end
