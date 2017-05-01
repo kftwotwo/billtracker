@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170422213022) do
+ActiveRecord::Schema.define(version: 20170501180924) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,11 +43,21 @@ ActiveRecord::Schema.define(version: 20170422213022) do
   end
 
   create_table "companies", force: :cascade do |t|
-    t.integer  "user_id"
-    t.string   "name"
-    t.string   "website"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.string  "name"
+    t.string  "website"
+  end
+
+  create_table "credit_cards", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "account_id"
+    t.integer "company_id"
+    t.string  "name_on_card"
+    t.string  "card_number"
+    t.date    "expiration_date_month"
+    t.date    "expiration_date_year"
+    t.string  "cvv"
+    t.float   "amount"
   end
 
   create_table "frequencies", force: :cascade do |t|
@@ -61,11 +71,10 @@ ActiveRecord::Schema.define(version: 20170422213022) do
   end
 
   create_table "notes", force: :cascade do |t|
-    t.integer  "company_id"
-    t.text     "entry"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "bill_id"
+    t.integer "company_id"
+    t.integer "credit_card_id"
+    t.text    "entry"
+    t.integer "bill_id"
   end
 
   create_table "users", force: :cascade do |t|

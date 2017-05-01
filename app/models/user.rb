@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :companies
   has_many :bills
   has_many :accounts
+  has_many :credit_cards
 end

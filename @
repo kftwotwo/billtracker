@@ -1,9 +1,0 @@
-Rails.application.routes.draw do
-  devise_for :users
-
-  root 'accounts#index'
-
-  resources :companies do
-    resources :accounts
-  end
-end
