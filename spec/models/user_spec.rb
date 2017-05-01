@@ -4,4 +4,5 @@ describe User do
   it { should have_many :companies }
   it { should have_many :bills }
   it { should have_many :accounts }
+  it { should have_many :transactions }
 end

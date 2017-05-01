@@ -5,4 +5,5 @@ class Bill < ApplicationRecord
   has_one :frequency
   has_one :category
   has_many :notes
+  has_many :transactions
 end
