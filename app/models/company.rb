@@ -3,5 +3,6 @@ class Company < ApplicationRecord
   has_many :bills
   has_many :notes
   has_many :accounts
+  has_many :credit_cards
   has_many :transactions
 end

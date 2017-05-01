@@ -18,6 +18,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'rails_semantic_logger'
 gem 'semantic-ui-sass', git: 'https://github.com/doabit/semantic-ui-sass.git'
 gem 'devise'
+gem 'credit_card_validations'
 
 group :development, :test do
   gem 'byebug', platform: :mri

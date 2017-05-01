@@ -5,7 +5,6 @@ class CreateCompanies < ActiveRecord::Migration[5.0]
       t.string :name
       t.string :website
 
-      t.timestamps
     end
   end
 end
