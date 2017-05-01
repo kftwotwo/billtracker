@@ -15,4 +15,5 @@ describe Bill do
   it { should have_one :frequency }
   it { should have_one :category }
   it { should have_many :notes }
+  it { should have_many :transactions }
 end
