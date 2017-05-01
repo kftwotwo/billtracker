@@ -5,6 +5,7 @@ class CreditCard < ApplicationRecord
   has_one :note
 
   validates :name_on_card, presence: true
+  validates :card_number, presence: true, credit_card_number: true
   validates :expiration_date_month, presence: true
   validates :expiration_date_year, presence: true
   validates :cvv, presence: true

@@ -16,6 +16,7 @@ describe CreditCard do
   it { should belong_to :company }
 
   it { should validate_presence_of :name_on_card }
+  it { should validate_presence_of :card_number }
   it { should validate_presence_of :expiration_date_month }
   it { should validate_presence_of :expiration_date_year }
   it { should validate_presence_of :cvv }
