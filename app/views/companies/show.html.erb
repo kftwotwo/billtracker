@@ -8,10 +8,9 @@
   <%= link_to "Website", URI::HTTP.build({:host => @company.website}).to_s, target: "_blank" %>
 </div>
 
+<%= @company.has_accounts? %>
+
 <div class="ui styled accordion">
-  <% if @company.accounts.empty? %>
-    <p>You do not have any accounts at this company.</p>
-  <% end %>
 
   <% @accounts.each do |account| %>
     <div class="title">

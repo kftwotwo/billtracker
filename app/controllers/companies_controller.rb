@@ -1,10 +1,12 @@
 class CompaniesController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @companies = current_user.companies
   end
 
   def show
-    @company = Company.find(params[:id])
+    @company = CompanyDecorator.find(params[:id])
     @accounts = @company.accounts
   end
 
