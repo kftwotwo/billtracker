@@ -8,6 +8,5 @@ class CreditCard < ApplicationRecord
   validates :card_number, presence: true, credit_card_number: true
   validates :expiration_date_month, presence: true
   validates :expiration_date_year, presence: true
-  validates :cvv, presence: true
   validates :amount, presence: true
 end

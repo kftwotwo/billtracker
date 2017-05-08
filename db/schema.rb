@@ -54,10 +54,10 @@ ActiveRecord::Schema.define(version: 20170501180924) do
     t.integer "company_id"
     t.string  "name_on_card"
     t.string  "card_number"
-    t.date    "expiration_date_month"
-    t.date    "expiration_date_year"
-    t.string  "cvv"
+    t.string  "expiration_date_month"
+    t.string  "expiration_date_year"
     t.float   "amount"
+    t.float   "balance"
   end
 
   create_table "frequencies", force: :cascade do |t|

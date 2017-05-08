@@ -3,8 +3,8 @@
     Bill Tracker
   </div>
 
-  <a class="item">Accounts</a>
-  <a class="item">Companies</a>
+  <%= link_to "Accounts", root_path, class: 'item' %>
+  <%= link_to "Companies", companies_path, class: 'item' %>
 
   <div class="right menu">
     <% if user_signed_in? %>
