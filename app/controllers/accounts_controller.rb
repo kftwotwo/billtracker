@@ -3,9 +3,12 @@ class AccountsController < ApplicationController
 
   def index
     @accounts = current_user.accounts
+    @credit_cards = current_user.credit_cards
   end
 
   def show
+    @account = Account.find(params[:id])
+    @credit_cards = @account.credit_cards
   end
 
   def new

@@ -19,3 +19,24 @@
    <% end %>
  </tbody>
 </table>
+
+
+<h1>Credit Cards</h1>
+
+<table class="ui celled table">
+ <thead>
+   <th>Account Name</th>
+   <th>Company Name</th>
+ </thead>
+
+ <tbody>
+
+   <% @credit_cards.each do |card| %>
+     <tr>
+       <td><%= link_to card.name_on_card, company_account_path(card.id,card.company_id) %></td>
+       <td><%= Company.find(card.company_id).name %></td>
+       <td><a href="#" class="ui small button">Pay</a></td>
+     </tr>
+   <% end %>
+ </tbody>
+</table>

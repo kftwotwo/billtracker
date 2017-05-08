@@ -20,6 +20,8 @@
 
     <div class="content">
       <p class="transition hidden">Account Number: <%= account.account_number %></p>
+      <p class="transition hidden">Account Type: <%= account.kind %></p>
+      <p class="transition hidden"><%= link_to "More", company_account_path(account.company_id, account.id) %></p>
     </div>
   <% end %>
 </div>

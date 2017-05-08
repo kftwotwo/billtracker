@@ -1,0 +1,38 @@
+<%= form_for @credit_card, html: {class: "ui form"} do |f| %>
+
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.hidden_field :account_id, value: params[:account_id] %>
+  <%= f.hidden_field :company_id, value: params[:company_id] %>
+
+  <div class="field">
+    <%= f.label :name_on_card, "Name on card" %>
+    <%= f.text_field :name_on_card %>
+  </div>
+
+  <div class="field">
+    <%= f.label :card_number %>
+    <%= f.text_field :card_number %>
+  </div>
+
+  <div class="field">
+    <%= f.label :expiration_date_month, "Expiration Month" %>
+    <%= f.text_field :expiration_date_month %>
+  </div>
+
+  <div class="field">
+    <%= f.label :expiration_date_year, "Expiration Year" %>
+    <%= f.text_field :expiration_date_year %>
+  </div>
+
+  <div class="field">
+    <%= f.label :amount, "Average Per-month" %>
+    <%= f.text_field :amount %>
+  </div>
+
+  <div class="field">
+    <%= f.label :balance, "Current Balance" %>
+    <%= f.text_field :balance %>
+  </div>
+
+   <%= f.submit "Add Credit Card", class: 'ui button'%>
+<% end %>

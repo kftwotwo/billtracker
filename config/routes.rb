@@ -3,7 +3,11 @@ Rails.application.routes.draw do
 
   root 'accounts#index'
 
+  resources :credit_cards
+
   resources :companies do
-    resources :accounts
+    resources :accounts do
+      resources :credit_cards
+    end
   end
 end

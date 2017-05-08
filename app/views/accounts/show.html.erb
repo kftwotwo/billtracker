@@ -1,0 +1,27 @@
+<p><%= @account.account_name %></p>
+<p><%= @account.kind %></p>
+<p><%= @account.account_number %></p>
+
+<%= link_to "New Credit Card", new_company_account_credit_card_path(@account.company_id, @account.id) %>
+
+
+<h1>Credit Cards</h1>
+
+<table class="ui celled table">
+ <thead>
+   <th>Account Name</th>
+   <th>Company Name</th>
+ </thead>
+
+ <tbody>
+
+   <% @credit_cards.each do |card| %>
+     <tr>
+       <td><%= card.name_on_card %></td>
+   <%= console %>
+       <td><%= Company.find(card.company_id).name %></td>
+       <td><a href="#" class="ui small button">Pay</a></td>
+     </tr>
+   <% end %>
+ </tbody>
+</table>
