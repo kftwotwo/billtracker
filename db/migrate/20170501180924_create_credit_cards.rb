@@ -4,6 +4,8 @@ class CreateCreditCards < ActiveRecord::Migration[5.0]
       t.integer :user_id
       t.integer :account_id
       t.integer :company_id
+      t.integer :bill_id
+      t.integer :frequency_id
 
       t.string :name_on_card
       t.string :card_number

@@ -4,6 +4,7 @@ class CreateDebitCards < ActiveRecord::Migration[5.0]
       t.integer :user_id
       t.integer :account_id
       t.integer :company_id
+      t.integer :bill_id
       t.string :name_on_card
       t.integer :card_number
       t.string :expiration_date_month

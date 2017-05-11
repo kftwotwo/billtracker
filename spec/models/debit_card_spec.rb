@@ -13,6 +13,8 @@ describe DebitCard do
   it { should belong_to :user }
   it { should belong_to :account }
   it { should belong_to :company }
+  it { should have_many :transactions }
+  it { should have_one :frequency }
 
   it { should validate_presence_of :name_on_card }
   it { should validate_presence_of :card_number }

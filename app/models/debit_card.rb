@@ -3,6 +3,8 @@ class DebitCard < ApplicationRecord
   belongs_to :user
   belongs_to :account
   belongs_to :company
+  has_many :transactions
+  has_one :frequency
 
   validates :name_on_card, presence: true
   validates :card_number, presence: true, credit_card_number: true
