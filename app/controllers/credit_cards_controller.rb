@@ -19,6 +19,13 @@ class CreditCardsController < ApplicationController
     end
   end
 
+  def destroy
+    binding.pry
+    @card = CreditCard.find(params[:id])
+    @card.destroy
+    redirect_to root_path
+  end
+
   private
 
   def credit_card_params
