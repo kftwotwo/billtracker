@@ -10,4 +10,6 @@ describe Company do
   it { should have_many :notes }
   it { should have_many :accounts }
   it { should have_many :transactions }
+  it { should have_many :credit_cards }
+  it { should have_many :debit_cards }
 end

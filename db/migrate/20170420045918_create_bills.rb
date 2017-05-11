@@ -7,6 +7,8 @@ class CreateBills < ActiveRecord::Migration[5.0]
       t.string :account_number
       t.integer :company_id
       t.integer :user_id
+      t.integer :credit_card_id
+      t.integer :debit_card_id
 
       t.timestamps
     end

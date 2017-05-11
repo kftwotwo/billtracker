@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170501180924) do
+ActiveRecord::Schema.define(version: 20170511002155) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(version: 20170501180924) do
     t.string   "account_number"
     t.integer  "company_id"
     t.integer  "user_id"
+    t.integer  "credit_card_id"
+    t.integer  "debit_card_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.string   "account_id"
@@ -52,11 +54,25 @@ ActiveRecord::Schema.define(version: 20170501180924) do
     t.integer "user_id"
     t.integer "account_id"
     t.integer "company_id"
+    t.integer "bill_id"
+    t.integer "frequency_id"
     t.string  "name_on_card"
     t.string  "card_number"
     t.string  "expiration_date_month"
     t.string  "expiration_date_year"
     t.float   "amount"
+    t.float   "balance"
+  end
+
+  create_table "debit_cards", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "account_id"
+    t.integer "company_id"
+    t.integer "bill_id"
+    t.string  "name_on_card"
+    t.integer "card_number"
+    t.string  "expiration_date_month"
+    t.string  "expiration_date_year"
     t.float   "balance"
   end
 
@@ -66,13 +82,16 @@ ActiveRecord::Schema.define(version: 20170501180924) do
     t.string   "bi_weekly"
     t.string   "tri_weekly"
     t.string   "monthly"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "credit_card_id"
+    t.integer  "debit_card_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "notes", force: :cascade do |t|
     t.integer "company_id"
     t.integer "credit_card_id"
+    t.integer "debit_card_id"
     t.text    "entry"
     t.integer "bill_id"
   end
@@ -83,8 +102,10 @@ ActiveRecord::Schema.define(version: 20170501180924) do
     t.integer  "bill_id"
     t.integer  "company_id"
     t.float    "amount"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "credit_card_id"
+    t.integer  "debit_card_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "users", force: :cascade do |t|
