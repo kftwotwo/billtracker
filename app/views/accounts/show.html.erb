@@ -11,6 +11,7 @@
  <thead>
    <th>Account Name</th>
    <th>Company Name</th>
+   <th>Options</th>
  </thead>
 
  <tbody>
@@ -20,7 +21,8 @@
        <td><%= card.name_on_card %></td>
    <%= console %>
        <td><%= Company.find(card.company_id).name %></td>
-       <td><a href="#" class="ui small button">Pay</a></td>
+       <td><a href="#" class="ui small button">Pay</a>
+         <%= link_to "Remove", company_account_path(@account.company_id, @account.id), data: {confirm: 'Are you sure?'}, method: :destroy, class: "ui red small button" %></td>
      </tr>
    <% end %>
  </tbody>
