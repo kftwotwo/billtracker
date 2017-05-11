@@ -4,10 +4,7 @@ describe DebitCard do
   it { should have_db_column :user_id }
   it { should have_db_column :account_id }
   it { should have_db_column :company_id }
-<<<<<<< Updated upstream
-=======
   it { should have_db_column :bill_id }
->>>>>>> Stashed changes
   it { should have_db_column :name_on_card }
   it { should have_db_column :expiration_date_month }
   it { should have_db_column :expiration_date_year }
