@@ -10,4 +10,6 @@ describe Account do
   it { should belong_to :company }
   it { should have_many :bills }
   it { should have_many :transactions }
+  it { should have_many :credit_cards }
+  it { should have_many :debit_cards }
 end

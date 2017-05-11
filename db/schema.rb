@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170501180924) do
+ActiveRecord::Schema.define(version: 20170511002155) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,17 @@ ActiveRecord::Schema.define(version: 20170501180924) do
     t.float   "balance"
   end
 
+  create_table "debit_cards", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "account_id"
+    t.integer "company_id"
+    t.string  "name_on_card"
+    t.integer "card_number"
+    t.string  "expiration_date_month"
+    t.string  "expiration_date_year"
+    t.float   "balance"
+  end
+
   create_table "frequencies", force: :cascade do |t|
     t.integer  "bill_id"
     t.string   "weekly"
@@ -73,6 +84,7 @@ ActiveRecord::Schema.define(version: 20170501180924) do
   create_table "notes", force: :cascade do |t|
     t.integer "company_id"
     t.integer "credit_card_id"
+    t.integer "debit_card_id"
     t.text    "entry"
     t.integer "bill_id"
   end

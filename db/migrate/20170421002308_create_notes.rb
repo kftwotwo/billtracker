@@ -3,6 +3,7 @@ class CreateNotes < ActiveRecord::Migration[5.0]
     create_table :notes do |t|
       t.integer :company_id
       t.integer :credit_card_id
+      t.integer :debit_card_id
 
       t.text :entry
     end

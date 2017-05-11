@@ -5,4 +5,5 @@ class Company < ApplicationRecord
   has_many :accounts
   has_many :credit_cards
   has_many :transactions
+  has_many :debit_cards
 end
