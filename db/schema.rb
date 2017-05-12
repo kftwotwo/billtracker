@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170511002155) do
+ActiveRecord::Schema.define(version: 20170511053034) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20170511002155) do
     t.integer  "company_id"
     t.integer  "user_id"
     t.integer  "credit_card_id"
-    t.integer  "debit_card_id"
+    t.integer  "loan_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.string   "account_id"
@@ -88,10 +88,21 @@ ActiveRecord::Schema.define(version: 20170511002155) do
     t.datetime "updated_at",     null: false
   end
 
+  create_table "loans", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "company_id"
+    t.integer  "account_id"
+    t.float    "interest"
+    t.float    "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "notes", force: :cascade do |t|
     t.integer "company_id"
     t.integer "credit_card_id"
     t.integer "debit_card_id"
+    t.integer "loan_id"
     t.text    "entry"
     t.integer "bill_id"
   end
@@ -104,6 +115,7 @@ ActiveRecord::Schema.define(version: 20170511002155) do
     t.float    "amount"
     t.integer  "credit_card_id"
     t.integer  "debit_card_id"
+    t.integer  "loan_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
