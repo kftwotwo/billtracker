@@ -6,9 +6,11 @@ describe Transaction do
   it { should have_db_column :bill_id }
   it { should have_db_column :company_id }
   it { should have_db_column :amount }
+  it { should have_db_column :loan_id }
 
   it { should belong_to :user }
   it { should belong_to :account }
   it { should belong_to :bill }
   it { should belong_to :company }
+  it { should belong_to :loan }
 end

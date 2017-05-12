@@ -11,4 +11,5 @@ describe Note do
   it { should belong_to :bill }
   it { should belong_to :credit_card }
   it { should belong_to :debit_card }
+  it { should belong_to :loan }
 end

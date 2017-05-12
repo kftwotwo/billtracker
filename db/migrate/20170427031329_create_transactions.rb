@@ -8,6 +8,7 @@ class CreateTransactions < ActiveRecord::Migration[5.0]
       t.float :amount
       t.integer :credit_card_id
       t.integer :debit_card_id
+      t.integer :loan_id
 
       t.timestamps
     end

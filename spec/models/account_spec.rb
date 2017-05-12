@@ -12,4 +12,5 @@ describe Account do
   it { should have_many :transactions }
   it { should have_many :credit_cards }
   it { should have_many :debit_cards }
+  it { should have_many :loans }
 end
