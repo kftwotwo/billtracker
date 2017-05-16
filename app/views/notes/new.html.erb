@@ -1,0 +1,9 @@
+<%= form_for [@notable, @note] do |f| %>
+
+  <div class="five wide field">
+    <%= f.label :entry %>
+    <%= f.text_field :entry %>
+  </div>
+
+  <%= f.submit "Add Note", class: 'ui button'%>
+<% end %>

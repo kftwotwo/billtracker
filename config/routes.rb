@@ -3,10 +3,10 @@ Rails.application.routes.draw do
 
   root 'accounts#index'
 
-  resources :credit_cards
-
   resources :companies do
+    resources :notes, only: [:create, :new]
     resources :accounts do
+      resources :notes, only: [:create, :new]
       resources :credit_cards
     end
   end

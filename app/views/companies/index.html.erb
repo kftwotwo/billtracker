@@ -2,7 +2,7 @@
 
 <ul>
   <% @companies.each do |company| %>
-    <li><%= link_to "#{company.name}", company_path(company.id) %></li>
+    <li><%= link_to "#{company.name}", company_path(company.id) %>,   <%= link_to "Add a new Note", new_company_note_path(company.id) %></li>
   <% end %>
 </ul>
 <%# <%= @companies.has_any? %1> %>

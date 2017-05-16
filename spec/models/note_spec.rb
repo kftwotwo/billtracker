@@ -1,15 +1,9 @@
 require 'rails_helper'
 
 describe Note do
-  it { should have_db_column :company_id }
-  it { should have_db_column :bill_id }
-  it { should have_db_column :credit_card_id }
-  it { should have_db_column :debit_card_id }
   it { should have_db_column :entry }
+  it { should have_db_column :notable_type }
+  it { should have_db_column :notable_id }
 
-  it { should belong_to :company }
-  it { should belong_to :bill }
-  it { should belong_to :credit_card }
-  it { should belong_to :debit_card }
-  it { should belong_to :loan }
+  it { should belong_to :notable }
 end
