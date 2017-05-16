@@ -2,7 +2,7 @@ class CreditCard < ApplicationRecord
   belongs_to :user
   belongs_to :account
   belongs_to :company
-  has_one :note
+  has_many :notes, as: :notable
   has_many :transactions
   has_one :frequency
   has_many :bills

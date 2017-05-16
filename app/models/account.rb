@@ -6,4 +6,5 @@ class Account < ApplicationRecord
   has_many :transactions
   has_many :debit_cards
   has_many :loans
+  has_many :notes, as: :notable
 end

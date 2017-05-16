@@ -4,4 +4,5 @@ class Transaction < ApplicationRecord
   belongs_to :bill
   belongs_to :company
   belongs_to :loan
+  has_many :notes, as: :notable
 end

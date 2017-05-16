@@ -99,10 +99,8 @@ ActiveRecord::Schema.define(version: 20170511053034) do
   end
 
   create_table "notes", force: :cascade do |t|
-    t.integer "company_id"
-    t.integer "credit_card_id"
-    t.integer "debit_card_id"
-    t.integer "loan_id"
+    t.string  "notable_type"
+    t.integer "notable_id"
     t.text    "entry"
     t.integer "bill_id"
   end
