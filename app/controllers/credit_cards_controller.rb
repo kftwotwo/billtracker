@@ -1,12 +1,14 @@
 class CreditCardsController < ApplicationController
 
   def new
-    account = Account.find(params[:account_id])
-    @credit_card = account.credit_cards.new
+    @company = Company.find(params[:company_id])
+    @account = Account.find(params[:account_id])
+    @credit_card = @account.credit_cards.new
   end
 
   def create
-    binding.pry
+    @company = Company.find(params[:company_id])
+    @account = Account.find(params[:account_id])
     card = params[:credit_card]
     account = Account.find(card[:account_id])
     @credit_card = account.credit_cards.new(credit_card_params)
@@ -20,7 +22,6 @@ class CreditCardsController < ApplicationController
   end
 
   def destroy
-    binding.pry
     @card = CreditCard.find(params[:id])
     @card.destroy
     redirect_to root_path

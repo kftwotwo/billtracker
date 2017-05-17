@@ -102,7 +102,6 @@ ActiveRecord::Schema.define(version: 20170511053034) do
     t.string  "notable_type"
     t.integer "notable_id"
     t.text    "entry"
-    t.integer "bill_id"
   end
 
   create_table "transactions", force: :cascade do |t|

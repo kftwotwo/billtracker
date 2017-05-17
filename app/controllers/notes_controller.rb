@@ -17,6 +17,14 @@ class NotesController < ApplicationController
     end
   end
 
+  def destroy
+    binding.pry
+    notable = find_notable
+    note = notable.notes.find(params[:id])
+    note.destroy
+    redirect_to root_path
+  end
+
   private
 
   def note_params

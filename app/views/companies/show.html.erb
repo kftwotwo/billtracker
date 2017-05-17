@@ -26,4 +26,13 @@
   <% end %>
 </div>
 
+<h1>Notes</h1>
+
+<div class="ui list">
+   <% @notes.each do |note| %>
+     <div class="item"><%= note.entry %><%= link_to "Delete", company_note_path(@company.id, note.id), data: {confirm: 'Are you sure?'}, method: :delete, class: "ui red small button" %></td></div>
+   <% end %>
+</div>
+
+<%= link_to "Add a new Note", new_company_note_path(@company.id) %><br>
 <%= link_to "Add new account", new_company_account_path(company_id: @company.id) %>

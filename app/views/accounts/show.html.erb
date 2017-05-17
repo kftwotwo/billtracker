@@ -19,11 +19,11 @@
    <% @credit_cards.each do |card| %>
      <tr>
        <td><%= card.name_on_card %></td>
-   <%= console %>
        <td><%= Company.find(card.company_id).name %></td>
        <td><a href="#" class="ui small button">Pay</a>
-         <%= link_to "Remove", company_account_path(@account.company_id, @account.id), data: {confirm: 'Are you sure?'}, method: :destroy, class: "ui red small button" %></td>
+         <%= link_to "Remove", company_account_credit_card_path(@account.company_id, @account.id, card.id), data: {confirm: 'Are you sure?'}, method: :delete, controller: 'credit_cards', class: "ui red small button" %></td>
      </tr>
    <% end %>
  </tbody>
-</table>
+ </table>
+
