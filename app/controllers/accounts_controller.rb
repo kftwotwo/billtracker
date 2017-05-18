@@ -9,6 +9,7 @@ class AccountsController < ApplicationController
   def show
     @account = Account.find(params[:id])
     @credit_cards = @account.credit_cards
+    @notes = @account.notes
   end
 
   def new
