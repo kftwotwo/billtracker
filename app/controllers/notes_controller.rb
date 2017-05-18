@@ -3,6 +3,7 @@ class NotesController < ApplicationController
   def new
     @notable = find_notable
     @note = @notable.notes.new
+
   end
 
   def create
@@ -40,6 +41,7 @@ class NotesController < ApplicationController
   # end
 
   def find_notable
+    binding.pry
     if params[:transaction_id]
       @notable = Transaction.find(params[:transaction_id])
     elsif params[:credit_card_id]
@@ -52,7 +54,7 @@ class NotesController < ApplicationController
       @notable = Loan.find(params[:loan_id])
     elsif params[:account_id]
       @notable = Account.find(params[:account_id])
-    elsif params[:company_id]
+    else
       @notable = Company.find(params[:company_id])
     end
   end

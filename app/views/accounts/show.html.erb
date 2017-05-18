@@ -31,7 +31,7 @@
 
 <div class="ui list">
    <% @notes.each do |note| %>
-     <div class="item"><%= note.entry %><%= link_to "Delete", company_note_path(@account.company_id, @account.id, note.id), data: {confirm: 'Are you sure?'}, method: :delete, class: "ui red small button" %></td></div>
+     <div class="item"><%= note.entry %><%= link_to "Delete", company_account_note_path(@account.company_id, @account.id, note.id), data: {confirm: 'Are you sure?'}, method: :delete, class: "ui red small button" %></td></div>
    <% end %>
 </div>
 

@@ -8,6 +8,7 @@ class AccountsController < ApplicationController
 
   def show
     @account = Account.find(params[:id])
+    @company = Company.find(@account.company_id)
     @credit_cards = @account.credit_cards
     @notes = @account.notes
   end
