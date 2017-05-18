@@ -4,6 +4,7 @@ class AccountsController < ApplicationController
   def index
     @accounts = current_user.accounts
     @credit_cards = current_user.credit_cards
+    @debit_cards = current_user.debit_cards
   end
 
   def show
@@ -11,6 +12,7 @@ class AccountsController < ApplicationController
     @company = Company.find(@account.company_id)
     @credit_cards = @account.credit_cards
     @notes = @account.notes
+    @loans = @account.loans
   end
 
   def new

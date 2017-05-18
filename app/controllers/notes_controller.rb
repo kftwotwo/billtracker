@@ -3,7 +3,8 @@ class NotesController < ApplicationController
   def new
     @notable = find_notable
     @note = @notable.notes.new
-
+    @company = Company.find(@notable.company_id)
+    @account = Account.find(@notable.account_id)
   end
 
   def create
@@ -19,7 +20,6 @@ class NotesController < ApplicationController
   end
 
   def destroy
-    binding.pry
     notable = find_notable
     note = notable.notes.find(params[:id])
     note.destroy
@@ -31,14 +31,6 @@ class NotesController < ApplicationController
   def note_params
     params.require(:note).permit(:entry)
   end
-
-  # def find_notable
-  #   params.each do |name, value|
-  #     if name =~ /(.+)_id$/
-  #       return $1.classify.constantize.find(value)
-  #     end
-  #   end
-  # end
 
   def find_notable
     binding.pry

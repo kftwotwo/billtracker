@@ -4,11 +4,24 @@ Rails.application.routes.draw do
   root 'accounts#index'
 
   resources :companies do
-    resources :notes
+    resources :notes, only: [:new, :create, :destroy]
 
     resources :accounts do
-      resources :notes
-      resources :credit_cards
+      resources :notes, only: [:new, :create, :destroy]
+
+      resources :credit_cards do
+        resources :notes, only: [:new, :create, :destroy]
+      end
+
+      resources :debit_cards do
+        resources :notes, only: [:new, :create, :destroy]
+      end
+
+      resources :debit_cards do
+        resources :notes, only: [:new, :create, :destroy]
+      end
+
+      resources :loans
     end
   end
 end
