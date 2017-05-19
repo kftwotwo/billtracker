@@ -2,9 +2,6 @@
 <p><%= @account.kind %></p>
 <p><%= @account.account_number %></p>
 
-<%= link_to "New Credit Card", new_company_account_credit_card_path(@account.company_id, @account.id) %>
-<%= link_to "New Debit Card", new_company_account_debit_card_path(@account.company_id, @account.id) %>
-<%= link_to 'New Bill', new_company_account_bill_path(@account.company_id, @account.id) %>
 
 
 <h1>Credit Cards</h1>
@@ -46,6 +43,10 @@
    <% end %>
 </div>
 
+<p>Options</p>
+<%= link_to "New Credit Card", new_company_account_credit_card_path(@account.company_id, @account.id) %><br>
+<%= link_to "New Debit Card", new_company_account_debit_card_path(@account.company_id, @account.id) %><br>
+<%= link_to 'New Bill', new_company_account_bill_path(@account.company_id, @account.id) %><br>
 <%= link_to "Add a new Note", new_company_account_note_path(@account.company_id, @account.id) %><br>
 <%= link_to "Add new account", new_company_account_path(company_id: @company.id) %><br>
 <%= link_to "Add a new Loan", new_company_account_loan_path(@account.company_id, @account.id) %><br>

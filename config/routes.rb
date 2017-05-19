@@ -10,21 +10,25 @@ Rails.application.routes.draw do
 
     resources :accounts do
       resources :notes, only: [:new, :create, :destroy]
-      resources :bills
 
       resources :credit_cards do
         resources :notes, only: [:new, :create, :destroy]
+        resources :transactions, only: [:new, :create]
       end
 
       resources :debit_cards do
         resources :notes, only: [:new, :create, :destroy]
+        resources :transactions, only: [:new, :create]
       end
 
       resources :bills do
         resources :notes, only: [:new, :create, :destroy]
+        resources :transactions, only: [:new, :create]
       end
 
-      resources :loans
+      resources :loans do
+        resources :transactions, only: [:new, :create]
+      end
     end
   end
 end

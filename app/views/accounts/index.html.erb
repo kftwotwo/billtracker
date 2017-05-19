@@ -6,6 +6,7 @@
    <th>Account Name</th>
    <th>Company Name</th>
    <th>Type</th>
+   <th>Options</th>
  </thead>
 
  <tbody>
@@ -15,7 +16,10 @@
        <td><%= link_to "#{account.account_name}", company_account_path(account.id, account.company_id) %></td>
        <td><%= Company.find(account.company_id).name %></td>
        <td><%= account.kind %></td>
-       <td><a href="#" class="ui small button">Pay</a></td>
+       <td>
+         <%= link_to "Delete", company_account_path(account.company_id, account.id), method: :delete, class: "ui red small button" %>
+         <%= link_to "Edit", edit_company_account_path(account.company_id, account.id), class: "ui yellow small button" %>
+      </td>
      </tr>
    <% end %>
  </tbody>
@@ -29,6 +33,7 @@
    <th>Name on card</th>
    <th>Company Name</th>
    <th>Card Number</th>
+   <th>Options</th>
  </thead>
 
  <tbody>
@@ -38,7 +43,10 @@
        <td><%= card.name_on_card %></td>
        <td><%= link_to Company.find(card.company_id).name, company_account_path(card.id, card.company_id) %></td>
        <td><%= card.card_number %></td>
-       <td><a href="#" class="ui small button">Pay</a></td>
+       <td>
+         <a href="#" class="ui small button">Pay</a>
+         <%= link_to "Delete", company_account_credit_card_path(card.company_id, card.account_id ,card.id), method: :delete, class: "ui red small button" %>
+       </td>
      </tr>
    <% end %>
  </tbody>
@@ -51,6 +59,7 @@
    <th>Name on card</th>
    <th>Company Name</th>
    <th>Card Number</th>
+   <th>Options</th>
  </thead>
 
  <tbody>
@@ -60,7 +69,9 @@
        <td><%= card.name_on_card %></td>
        <td><%= link_to Company.find(card.company_id).name, company_account_path(card.id, card.company_id) %></td>
        <td><%= card.card_number %></td>
-       <td><a href="#" class="ui small button">Pay</a></td>
+       <td>
+         <%= link_to "Delete", company_account_debit_card_path(card.company_id, card.account_id ,card.id), method: :delete, class: "ui red small button" %>
+       </td>
      </tr>
    <% end %>
  </tbody>
@@ -74,17 +85,21 @@
    <th>Account</th>
    <th>Date</th>
    <th>Amount</th>
+   <th>Options</th>
  </thead>
 
  <tbody>
 
-   <% @bills.each do |loan| %>
+   <% @bills.each do |bill| %>
      <tr>
-       <td><%= Company.find(loan.company_id).name %></td>
-       <td><%= Account.find(loan.account_id).account_name %></td>
-       <td><%= loan.next_due_date %></td>
-       <td><%= loan.amount %></td>
-       <td><a href="#" class="ui small button">Pay</a></td>
+       <td><%= Company.find(bill.company_id).name %></td>
+       <td><%= Account.find(bill.account_id).account_name %></td>
+       <td><%= bill.next_due_date %></td>
+       <td><%= bill.amount %></td>
+       <td>
+         <a href="#" class="ui small button">Pay</a>
+         <%= link_to "Delete", company_account_bill_path(bill.company_id, bill.account_id, bill.id), method: :delete, class: "ui red small button" %>
+       </td>
      </tr>
    <% end %>
  </tbody>
