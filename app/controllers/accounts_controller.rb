@@ -5,6 +5,7 @@ class AccountsController < ApplicationController
     @accounts = current_user.accounts
     @credit_cards = current_user.credit_cards
     @debit_cards = current_user.debit_cards
+    @bills = current_user.bills
   end
 
   def show

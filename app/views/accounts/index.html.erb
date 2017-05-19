@@ -65,3 +65,28 @@
    <% end %>
  </tbody>
 </table>
+
+<h1>Bills</h1>
+
+<table class="ui celled table">
+ <thead>
+   <th>Company</th>
+   <th>Account</th>
+   <th>Date</th>
+   <th>Amount</th>
+ </thead>
+
+ <tbody>
+
+   <% @bills.each do |loan| %>
+     <tr>
+       <td><%= Company.find(loan.company_id).name %></td>
+       <td><%= Account.find(loan.account_id).account_name %></td>
+       <td><%= loan.next_due_date %></td>
+       <td><%= loan.amount %></td>
+       <td><a href="#" class="ui small button">Pay</a></td>
+     </tr>
+   <% end %>
+ </tbody>
+</table>
+
