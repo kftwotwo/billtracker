@@ -12,6 +12,7 @@ class AccountsController < ApplicationController
     @account = Account.find(params[:id])
     @company = Company.find(@account.company_id)
     @credit_cards = @account.credit_cards
+    @debit_cards = @account.debit_cards
     @notes = @account.notes
     @loans = @account.loans
   end

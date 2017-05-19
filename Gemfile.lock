@@ -65,8 +65,8 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    chart-js-rails (0.1.2)
-      railties (> 3.1)
+    chartjs-ror (3.3.1)
+      rails (>= 3.1)
     coderay (1.1.1)
     coffee-rails (4.2.1)
       coffee-script (>= 2.2.0)
@@ -254,7 +254,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   capybara
-  chart-js-rails
+  chartjs-ror
   coffee-rails (~> 4.2)
   credit_card_validations
   devise

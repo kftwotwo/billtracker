@@ -13,6 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require semantic-ui
-//= require Chart
+//= require Chart.min
 //= require turbolinks
 //= require_tree .

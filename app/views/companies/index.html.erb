@@ -1,13 +1,12 @@
-<h1>List of Bill Companies</h1>
+<h1>Your Companies</h1>
 
 <ul>
   <% @companies.each do |company| %>
     <li><%= link_to "#{company.name}", company_path(company.id) %></li>
   <% end %>
 </ul>
-<%# <%= @companies.has_any? %1> %>
-  <% if @companies.empty? %>
-    <p>You currently do not have any companies</p>
-  <% end %>
+<% if @companies.empty? %>
+  <p>You currently do not have any companies</p>
+<% end %>
 
-  <%= link_to "Add a new company", new_company_path %>
+<%= link_to "Add Company", new_company_path, class: "ui green button" %>
