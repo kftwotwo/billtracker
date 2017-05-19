@@ -1,0 +1,13 @@
+<%= form_for [@company, @account, @transaction], html: { class: "ui form" } do |f| %>
+
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.hidden_field :company_id, value: params[:company_id] %>
+  <%= f.hidden_field :account_id, value: params[:account_id] %>
+
+  <div class="five wide field">
+    <%= f.label :amount, "Amount" %>
+    <%= f.text_field :amount %>
+  </div>
+
+  <%= f.submit "Add Account", class: 'ui button'%>
+<% end %>

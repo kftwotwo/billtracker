@@ -8,6 +8,7 @@ class CompaniesController < ApplicationController
   def show
     @company = CompanyDecorator.find(params[:id])
     @accounts = @company.accounts
+    @notes = @company.notes
   end
 
   def new

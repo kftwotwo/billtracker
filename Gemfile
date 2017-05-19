@@ -20,6 +20,7 @@ gem 'semantic-ui-sass', git: 'https://github.com/doabit/semantic-ui-sass.git'
 gem 'devise'
 gem 'credit_card_validations'
 gem 'draper', '3.0.0.pre1'
+gem 'chartjs-ror'
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -27,6 +28,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'shoulda-matchers', '~> 3.1'
   gem 'capybara'
+  gem "factory_girl_rails", "~> 4.0"
 end
 
 group :development do

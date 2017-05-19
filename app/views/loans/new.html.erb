@@ -1,0 +1,17 @@
+<%= form_for [@company, @account, @loan], html: {class: "ui form"} do |f| %>
+
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.hidden_field :company_id, value: params[:company_id] %>
+
+  <div class="field">
+    <%= f.label :interest %>
+    <%= f.text_field :interest %>
+  </div>
+
+  <div class="field">
+    <%= f.label :amount, "Total" %>
+    <%= f.text_field :amount %>
+  </div>
+
+   <%= f.submit "Add Loan", class: 'ui button'%>
+<% end %>

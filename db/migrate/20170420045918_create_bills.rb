@@ -9,6 +9,7 @@ class CreateBills < ActiveRecord::Migration[5.0]
       t.integer :user_id
       t.integer :credit_card_id
       t.integer :loan_id
+      t.integer :category_id
 
       t.timestamps
     end

@@ -6,7 +6,7 @@
 
 <div class="ui sub header">
   <%= link_to "Website", URI::HTTP.build({:host => @company.website}).to_s, target: "_blank" %>
-</div>
+</div><br>
 
 <%= @company.has_accounts? %>
 
@@ -26,4 +26,24 @@
   <% end %>
 </div>
 
-<%= link_to "Add new account", new_company_account_path(company_id: @company.id) %>
+<% if @notes.any?  %>
+
+  <h1>Notes</h1>
+
+  <div class="ui cards">
+    <% @notes.each do |note| %>
+      <div class="card">
+        <div class="content">
+          <div class="meta"><%= note.read_attribute_before_type_cast("created_at") %></div>
+          <div class="description">
+            <%= note.entry %><br>
+            <%= link_to "Delete", company_note_path(@company.id, note.id), data: {confirm: 'Are you sure?'}, method: :delete, class: "ui red small button" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+<%= link_to "Add a Note", new_company_note_path(@company.id) %><br>
+<%= link_to "Add Account", new_company_account_path(company_id: @company.id) %>

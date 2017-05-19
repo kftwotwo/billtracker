@@ -1,0 +1,9 @@
+<%= form_for @category, html: {class: "ui form"} do |f| %>
+
+  <div class="field">
+    <%= f.label :kind, "Name of Category" %>
+    <%= f.text_field :kind %>
+  </div>
+
+   <%= f.submit "Add Category", class: 'ui button'%>
+<% end %>
