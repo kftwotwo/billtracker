@@ -20,6 +20,7 @@ gem 'semantic-ui-sass', git: 'https://github.com/doabit/semantic-ui-sass.git'
 gem 'devise'
 gem 'credit_card_validations'
 gem 'draper', '3.0.0.pre1'
+gem 'chart-js-rails'
 
 group :development, :test do
   gem 'byebug', platform: :mri
