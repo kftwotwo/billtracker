@@ -19,7 +19,7 @@ Rails.application.routes.draw do
         resources :notes, only: [:new, :create, :destroy]
       end
 
-      resources :debit_cards do
+      resources :bills do
         resources :notes, only: [:new, :create, :destroy]
       end
 

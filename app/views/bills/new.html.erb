@@ -1,0 +1,21 @@
+<%= form_for [@company, @account, @bill], html: { class: "ui form" } do |f| %>
+
+  <%= f.hidden_field :user_id, value: current_user.id %>
+
+  <div class="five wide field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="five wide field">
+    <%= f.label :next_due_date, "Next Due Date" %>
+    <%= f.select_date :next_due_date, class: '"datepicker hasDatepicker' %>
+  </div>
+
+  <div class="five wide field">
+    <%= f.label :amount, "Amount" %>
+    <%= f.text_field :amount %>
+  </div>
+
+  <%= f.submit "Add Account", class: 'ui button'%>
+<% end %>
