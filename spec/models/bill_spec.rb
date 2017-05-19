@@ -10,15 +10,16 @@ describe Bill do
   it { should have_db_column :account_number }
   it { should have_db_column :company_id }
   it { should have_db_column :loan_id }
+  it { should have_db_column :category_id }
 
   it { should belong_to :user }
   it { should belong_to :company }
   it { should belong_to :account }
   it { should belong_to :credit_card }
   it { should belong_to :loan }
+  it { should belong_to :category }
 
   it { should have_one :frequency }
-  it { should have_one :category }
 
   it { should have_many :notes }
   it { should have_many :transactions }

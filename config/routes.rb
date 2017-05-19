@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   root 'accounts#index'
 
+  resources :categories, only: [:new, :create, :destroy]
+
   resources :companies do
     resources :notes, only: [:new, :create, :destroy]
 
